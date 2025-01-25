@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Timeline</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/logo.png" alt="GitHub Timeline Logo" class="logo">
+      <h1>GitHub Timeline Generator</h1>
+      <button id="toggle-theme">Toggle Dark Mode</button>
+    </header>
+    <main>
+      <div class="input-group">
+        <input type="text" id="github-username" placeholder="Enter GitHub username">
+        <button id="generate-timeline">Generate</button>
+      </div>
+      <p id="warning-message"></p>
+      <div id="filters" class="hidden">
+        <label for="filter-language">Filter by Language:</label>
+        <select id="filter-language"></select>
+      </div>
+      <canvas id="repo-timeline-chart" class="hidden"></canvas>
+      <ul id="repo-list"></ul>
+    </main>
+    <footer>
+      <p>Made with ❤️ for GitHub users</p>
+    </footer>
+  </div>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
