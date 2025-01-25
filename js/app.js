@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     let darkMode = false;
   
-    // Toggle dark mode
     toggleThemeButton.addEventListener("click", () => {
       darkMode = !darkMode;
       document.body.classList.toggle("dark-mode", darkMode);
@@ -48,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }));
   
         repoData.sort((a, b) => a.created_at - b.created_at);
-  
-        // Populate repo list and language filter
+          
         const languages = new Set();
         repoData.forEach((repo) => {
           const listItem = document.createElement("li");
@@ -86,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             repoList.appendChild(listItem);
           });
         });
-  
-        // Prepare data for chart
+
         const repoSummary = repoData.reduce((acc, repo) => {
           const year = repo.created_at.getFullYear();
           acc[year] = (acc[year] || 0) + 1;
@@ -96,8 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         const chartLabels = Object.keys(repoSummary).sort();
         const chartData = chartLabels.map((year) => repoSummary[year]);
-  
-        // Render chart
+
         const ctx = chartCanvas.getContext("2d");
         chartCanvas.style.display = "block";
         new Chart(ctx, {
